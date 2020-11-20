@@ -26,4 +26,11 @@ module.exports = {
             template: path.resolve(__dirname, 'public/index.html')
         })
     ],
+    devServer: {
+        port: 3000,
+        open: true,
+        hot: true,
+        historyApiFallback: true,
+    },
+    devtool: 'source-map',
 };
