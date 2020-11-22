@@ -19,6 +19,23 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ['ts-loader'],
             },
+            {
+                test: /\.(s*)css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                mode: 'local',
+                                localIdentName: '[name]__[local]__[hash:base64:5]',
+                                auto: /\.module\.\w+$/i,
+                            }
+                        }
+                    },
+                    'sass-loader'
+                ],
+            }
         ]
     },
     plugins: [
